@@ -7,9 +7,9 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.assertj.core.api.Assertions.assertThat;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -20,13 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class CountryControllerTest extends AbstractTransactionalJUnit4SpringContextTests {
     private final MockMvc mockMvc;
     private final static String CHEESE = "cheese";
-    private final static String ANIMALS = "animals";
-    private final static String COLOURS = "colours";
-    private final static String COUNTRIES = "countries";
-    private final static String FLAVOURS = "flavours";
-    private final static String WEBPAGES = "webpages";
-    private final static String CHEESEANIMALS = "cheeseanimals";
-    private final static String CHEESEFLAVOURS = "cheeseflavours";
+
 
     CountryControllerTest(MockMvc mockMvc) {
         this.mockMvc = mockMvc;

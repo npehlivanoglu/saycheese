@@ -19,10 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 class CheeseControllerTest extends AbstractTransactionalJUnit4SpringContextTests {
     private final static String CHEESE = "cheese";
-    private final static String ANIMALS = "animals";
-    private final static String COLOURS = "colours";
-    private final static String COUNTRIES = "countries";
-    private final static String FLAVOURS = "flavours";
+
     private final static String WEBPAGES = "webpages";
     private final static String CHEESEANIMALS = "cheeseanimals";
     private final static String CHEESEFLAVOURS = "cheeseflavours";
