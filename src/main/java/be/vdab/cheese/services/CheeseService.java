@@ -1,6 +1,7 @@
 package be.vdab.cheese.services;
 
 import be.vdab.cheese.domain.Cheese;
+import be.vdab.cheese.exceptions.CheeseNietGevondenException;
 import be.vdab.cheese.repositories.CheeseRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +24,19 @@ public class CheeseService {
 
     public Optional<Cheese> findById(long id) {
         return cheeseRepository.findById(id);
-    };
+    }
+
+    ;
+
+    @Transactional
+    public int likeCheese(long id) {
+        if (cheeseRepository.likeCheese(id) == 0) {
+            throw new CheeseNietGevondenException();
+        } else {
+            return 1;
+        }
+
+    }
 
 
 }

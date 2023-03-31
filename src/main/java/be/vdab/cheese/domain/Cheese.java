@@ -26,15 +26,15 @@ public class Cheese {
     @JoinColumn(name = "colourId")
     private Colour colour;
 
-    @ManyToMany(mappedBy = "cheeseSet",fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "cheeseSet", fetch = FetchType.LAZY)
     @OrderBy("name")
     private Set<Flavour> flavours;
 
-    @ManyToMany(mappedBy = "cheeseSet")
+    @ManyToMany(mappedBy = "cheeseSet", fetch = FetchType.LAZY)
     @OrderBy("name")
     private Set<Animal> animals;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "webpages",
             joinColumns = @JoinColumn(name = "cheeseId"))
     private Set<Website> websites;
@@ -76,6 +76,10 @@ public class Cheese {
         if (!websites.add(website)) {
             throw new CheeseHeeftDezeWebsiteAlException();
         }
+    }
+
+    public void likeCheese() {
+        likes = likes + 1;
     }
 
     public long getId() {
